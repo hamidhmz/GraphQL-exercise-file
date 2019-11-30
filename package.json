@@ -1,0 +1,27 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "description": "this project is for exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamidhmz/GraphQL-exercise-file.git"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "hamidreza nasrollahi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamidhmz/GraphQL-exercise-file/issues"
+  },
+  "homepage": "https://github.com/hamidhmz/GraphQL-exercise-file#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^24.9.0"
+  }
+}
