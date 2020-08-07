@@ -1,0 +1,26 @@
+version: '3.2'
+
+services:
+  app-graph:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    volumes:
+      - .:/app
+    
+    env_file:
+      - .env
+    ports:
+      - 4000:4000
+    depends_on:
+      - mongo-graph
+  mongo-graph:
+    image: mongo:4.2.3
+    restart: always
+    ports:
+      - 27027:27017
+    volumes:
+      - mongo-data-experimental:/data/db
+volumes:
+  mongo-data-experimental:

@@ -4,8 +4,11 @@
   "description": "this project is for exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "node index",
+    "nodemon": "nodemon --delay 80ms --watch . index",
+    "debug": "nodemon --delay 80ms --watch . index",
+    "test:ci": "jest  --ci",
+    "test": "jest test/ --watchAll --forceExit --detectOpenHandles --verbose --coverage --maxWorkers=1"
   },
   "repository": {
     "type": "git",
@@ -21,7 +24,15 @@
   },
   "homepage": "https://github.com/hamidhmz/GraphQL-exercise-file#readme",
   "dependencies": {
+    "apollo-server": "^2.16.1",
     "express": "^4.17.1",
-    "jest": "^24.9.0"
+    "graphql-yoga": "^1.18.3",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
   }
 }
