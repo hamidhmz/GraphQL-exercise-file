@@ -1,4 +1,3 @@
-
 type Mutation {
   "example for mutation create data"
   createUser(data: createUserInput): User!
@@ -6,12 +5,20 @@ type Mutation {
   createPost(data: createPostInput): Post!
   "example for mutation create data"
   createComment(data: createCommentInput): Comment!
+
   "example for mutation delete data"
   deleteUser(id: ID!): User!
   "example for mutation delete data"
   deletePost(id: ID!): Post!
   "example for mutation delete data"
   deleteComment(id: ID!): Comment!
+
+  "example for mutation udpate data"
+  updateUser(id: ID!, data: updateUserInput): User!
+  "example for mutation udpate data"
+  updatePost(id: ID!, data: updatePostInput): Post!
+  "example for mutation udpate data"
+  updateComment(id: ID!, data: updateCommentInput): Comment!
 }
 
 type Query {
@@ -49,6 +56,24 @@ input createPostInput {
 }
 
 input createCommentInput {
+  text: String!
+  author: ID!
+  post: ID!
+}
+input updateUserInput {
+  name: String!
+  email: String!
+  age: Int
+}
+
+input updatePostInput {
+  title: String!
+  body: String!
+  published: Boolean!
+  author: ID!
+}
+
+input updateCommentInput {
   text: String!
   author: ID!
   post: ID!

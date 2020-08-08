@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "nodemon": "nodemon --delay 80ms --watch . index",
+    "nodemon": "nodemon nodemon -e js,graphql,json --delay 80ms --watch . index",
     "debug": "nodemon --delay 80ms --watch . index",
     "test:ci": "jest  --ci",
     "test": "jest test/ --watchAll --forceExit --detectOpenHandles --verbose --coverage --maxWorkers=1"
