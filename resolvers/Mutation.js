@@ -1,3 +1,5 @@
+const { removeUndefinedFieldFromObject } = require('../utils');
+
 module.exports = {
   /* -------------------------------------------------------------------------- */
   /*                               create examples                              */
@@ -161,14 +163,18 @@ module.exports = {
   /*                             example for update                             */
   /* -------------------------------------------------------------------------- */
   async updateUser(parent, { id, data }, { User }) {
+    const mutation = {
+      name: data.name,
+      email: data.email,
+      age: data.age,
+    };
+
+    removeUndefinedFieldFromObject(mutation);
+
     const result = await User.model.findOneAndUpdate(
       { _id: id },
       {
-        $set: {
-          name: data.name,
-          email: data.email,
-          age: data.age,
-        },
+        $set: mutation,
       },
       { new: true },
     );
@@ -179,12 +185,15 @@ module.exports = {
     return result;
   },
   async updateComment(parent, { id, data }, { Comment }) {
+    const mutation = {
+      text: data.text,
+    };
+
+    removeUndefinedFieldFromObject(mutation);
     const result = await Comment.model.findOneAndUpdate(
       { _id: id },
       {
-        $set: {
-          text: data.text,
-        },
+        $set: mutation,
       },
       { new: true },
     );
@@ -194,14 +203,18 @@ module.exports = {
     return result;
   },
   async updatePost(parent, { id, data }, { Post }) {
+    const mutation = {
+      title: data.title,
+      body: data.body,
+      published: data.published,
+    };
+
+    removeUndefinedFieldFromObject(mutation);
+
     const result = await Post.model.findOneAndUpdate(
       { _id: id },
       {
-        $set: {
-          title: data.title,
-          body: data.body,
-          published: data.published,
-        },
+        $set: mutation,
       },
       { new: true },
     );
