@@ -21,6 +21,6 @@ services:
     ports:
       - 27027:27017
     volumes:
-      - mongo-data-experimental:/data/db
+      - mongo-data-graphql:/data/db
 volumes:
-  mongo-data-experimental:
+  mongo-data-graphql:

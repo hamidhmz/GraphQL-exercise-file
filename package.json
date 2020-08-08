@@ -25,9 +25,13 @@
   "homepage": "https://github.com/hamidhmz/GraphQL-exercise-file#readme",
   "dependencies": {
     "apollo-server": "^2.16.1",
+    "config": "^3.3.1",
     "express": "^4.17.1",
+    "graphql-import": "^1.0.2",
     "graphql-yoga": "^1.18.3",
     "jest": "^24.9.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.28",
     "nodemon": "^2.0.4"
   },
   "devDependencies": {
