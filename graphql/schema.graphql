@@ -42,6 +42,11 @@ type Query {
   familyName: String!
 }
 
+type Subscription {
+  "example for Subscription"
+  count: Int!
+}
+
 input createUserInput {
   name: String!
   email: String!
